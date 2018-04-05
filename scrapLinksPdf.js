@@ -18,7 +18,7 @@ const fs = require('fs')
 // 	`linksTest.json`
 // ]
 // const jsonArr = [].concat(...filesArr.map(_ => require(`./files/${_}`)))
-const jsonArr = require(`./test.pdf`)
+// const jsonArr = require(`./testPdf.pdf`)
 let result = []
 let log = []
 let c = 1
@@ -27,17 +27,17 @@ let pdfParser = new PDFParser();
 pdfParser.on('pdfParser_dataError', errData => 
 	console.error(errData.parserError))
 pdfParser.on('pdfParser_dataReady', pdfData => 
-	fs.writeFile('./testPdf.json', JSON.stringify(pdfParser.getAllFieldsTypes())))
+	fs.writeFile('./testPdf.json', JSON.stringify(pdfData)))
 
 pdfParser.loadPDF('./testPdf.pdf')
 
 console.log(`Status\tID\tTotal\tURL`)
 
-for([i, url] of jsonArr.entries()) {
-	let link = url
-	let index = i
-	// getData(link, index)
-}
+// for([i, url] of jsonArr.entries()) {
+// 	let link = url
+// 	let index = i
+// 	// getData(link, index)
+// }
 
 function getData(link, index) {
 	setTimeout(function() {
