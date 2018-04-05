@@ -10,7 +10,7 @@
 			"name": "Launch Program",
 			// "program": "${workspaceFolder}\\index.js"
 			"program": "${workspaceFolder}\\scrapLinks.js"
-			// "program": "${workspaceFolder}\\txt2array.js"
+			// "program": "${workspaceFolder}\\tests.js"
 		}
 	]
 }
