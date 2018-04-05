@@ -3,20 +3,19 @@ const request = require('request')
 const PDFParser = require('pdf2json')
 const fs = require('fs')
 
-// const path = `C:\\Users\\Forensics\\Documents\\repos\\web-scraper\\`
 // const filesArr = [
 // 	`links.json`,
-// 	// `links1k.json`,
-// 	// `links2k.json`,
-// 	// `links3k.json`,
-// 	// `links4k.json`,
-// 	// `links5k.json`,
-// 	// `links6k.json`,
-// 	// `links7k.json`,
-// 	// `links8k.json`,
-// 	// `links9k.json`,
-// 	// `links9.23k.json`,
-// 	// `linksTest.json`
+// 	`links1k.json`,
+// 	`links2k.json`,
+// 	`links3k.json`,
+// 	`links4k.json`,
+// 	`links5k.json`,
+// 	`links6k.json`,
+// 	`links7k.json`,
+// 	`links8k.json`,
+// 	`links9k.json`,
+// 	`links9.23k.json`,
+// 	`linksTest.json`
 // ]
 // const jsonArr = [].concat(...filesArr.map(_ => require(`./files/${_}`)))
 const jsonArr = require(`./test.pdf`)
