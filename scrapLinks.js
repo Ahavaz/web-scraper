@@ -57,9 +57,9 @@ function getData(link, index) {
 			if (c++ === jsonArr.length) {
 				fs.writeFileSync(`./files/result.json`, JSON.stringify(result))
 				fs.writeFileSync('log.json', JSON.stringify(log))
-				console.log(result)
+				// console.log(result)
 				console.log('\nDone!')
 			}
 		})
-	}, 500 * index)
+	}, 2000 * index)
 }
