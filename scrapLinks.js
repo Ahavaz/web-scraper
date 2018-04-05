@@ -23,8 +23,6 @@ let result = []
 let log = []
 let c = 1
 
-console.log(jsonArr.length)
-
 console.log(`Status\tID\tTotal\tURL`)
 
 for([i, url] of jsonArr.entries()) {
@@ -57,9 +55,9 @@ function getData(link, index) {
 			log.push({ Status: status, ID: c, Total: result.length, URL: link })
 			console.log(`${status}\t${c}\t${result.length}\t${link}`)
 			if (c++ === jsonArr.length) {
-				fs.writeFileSync('resultTest.json', JSON.stringify(result))
+				fs.writeFileSync(`./files/result.json`, JSON.stringify(result))
 				fs.writeFileSync('log.json', JSON.stringify(log))
-				// console.log(result)
+				console.log(result)
 				console.log('\nDone!')
 			}
 		})
