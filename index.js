@@ -5,7 +5,7 @@ const search = 'Acusado:'
 const size = 1000
 let params = []
 let arr = []
-let filt = []
+// let filt = []
 let c = 1
 
 function options(start, size, search) {
@@ -59,7 +59,7 @@ setTimeout(function () {
 		// console.log(object.start, object.size)
 	}
 }, 3000)
-	
+
 function getData(object, index) {
 	setTimeout(function () {
 		request(options(object.start, object.size, search), function (error, response, body) {
@@ -69,12 +69,12 @@ function getData(object, index) {
 				arr.push(e._source.enderecoS3)
 				console.log(e._source.enderecoS3)
 			}
-			if (c++ === params.length) {
-				filt = arr.filter(_ => _.endsWith('.html'))
-				fs.writeFileSync(`./files/links.json`, JSON.stringify(filt))
+			if(c++ === params.length) {
+				// filt = arr.filter(_ => _.endsWith('.html'))
+				fs.writeFileSync(`./files/links.json`, JSON.stringify(arr))
 				// console.log(result)
-				console.log(filt.length)
-				console.log('\nDone!')
+				console.log(arr.length)
+				console.log(`\nDone!`)
 			}
 			// fs.writeFileSync(`./files/links${index + 1}-${start + size}.json`, JSON.stringify(filt))
 			// console.log(JSON.stringify(arr))
