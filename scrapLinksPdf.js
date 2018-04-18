@@ -4,7 +4,7 @@ const pdfExtract = require('pdf-extract')
 const fs = require('fs')
 const inspect = require('eyes').inspector({ maxLength: 20000 })
 
-const jsonArr = require(`./files/links.json`)
+const jsonArr = require(`./files/links.json`).filter(_ => _.endsWith('.pdf'))
 let result = []
 let log = []
 let c = 0
@@ -47,7 +47,8 @@ function clearDir(path) {
 			for(file of files)
 				fs.unlinkSync(`${path}/${file}`)
 	}	catch(e) {
-		console.error(e)
+		// console.error(e)
+		return
 	}
 }
 
@@ -88,6 +89,7 @@ function formatText(text, path) {
 
 iterateLinks()
 
+console.log(`Status\tID\tTotal\tURL`)
 console.log(`Status\tID\tTotal\tURL`)
 
 async function iterateLinks(){
